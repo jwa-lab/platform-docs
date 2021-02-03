@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## JWA Platform
 
-You can use the [editor on GitHub](https://github.com/jwa-lab/platform-docs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The JWA Platform is a cloud-based platform that offers incredibly powerful services for video game editors to build games on top of.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+At present time, it supports integration with the Tezos Blockchain to store game items that can be transfered between games and players or collected.
 
-### Markdown
+### Current services
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. Tokenization Service
 
-```markdown
-Syntax highlighted code block
+The Tokenization Service is a service that allows:
 
-# Header 1
-## Header 2
-### Header 3
+- Storage of large number of game items that can be used in video games
+- Assignment of ownership of items to video games and players
+- Transfer of ownership of items between players
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## Index
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jwa-lab/platform-docs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+1. [Platform's architecture](ARCHITECTURE.md)
+2. [Tokenization Servicce](TOKENIZATION_SERVICE.md)
