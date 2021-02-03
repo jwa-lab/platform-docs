@@ -7,3 +7,7 @@ To interact with the platform, a [gRPC] call is made on [Airlock], which is an i
 The reponse is returned or streamed back to the [gRPC] client.
 
 <img src="assets/architecture.png" alt="architecture" />
+
+[NATS.io]:https://nats.io/
+[gRPC]:https://grpc.io/
+[Airlock]:https://github.com/jwa-lab/airlock
