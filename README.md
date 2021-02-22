@@ -4,15 +4,19 @@ The JWA Platform's documentation and examples
 
 ### run the tests
 
+After cloning the repository, run:
+
+```
+npm install
+```
+
 ```
 npx jwalab start
-
-npm run test
 ```
 
-Verify:
+_wait for a few seconds until the tokenization service has had a chance to deploy the warehouse contract. _
 
-To find the contract name, look at the tokenization-service logs:
+To Verify:
 
 ```
 $ docker ps
@@ -29,7 +33,15 @@ $ docker logs 7ddaa893d486
 [TOKENIZATION-SERVICE] warehouse contract deployed at KT1StMU861ihUHweRavtZX7zgKGtB5xcHPAU
 ```
 
-The contract id is `KT1StMU861ihUHweRavtZX7zgKGtB5xcHPAU`
+The contract is deployed and its id is `KT1StMU861ihUHweRavtZX7zgKGtB5xcHPAU`
+
+Now you may run the tests:
+
+```
+npm run test
+```
+
+The first tests will add and get an item from the blockchain. After you get a successful run, you may check the blockchain for your data:
 
 ```
 // view details about the current smart contract
