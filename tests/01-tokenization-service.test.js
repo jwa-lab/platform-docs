@@ -33,10 +33,10 @@ describe("Given Airlock is running", () => {
             client.request(
                 {
                     endpoint: "tokenization-service_add_item",
-                    payload_text: '{"data":{"XP":"97"},"item_id":1,"quantity":0}',
+                    payload_text:
+                        '{"data":{"XP":"97"},"item_id":1,"quantity":0}'
                 },
                 (err, res) => {
-                    console.log(err, res)
                     response = res;
                     done();
                 }
@@ -51,14 +51,14 @@ describe("Given Airlock is running", () => {
 
         describe("When I get the added item", () => {
             let response;
-    
+
             beforeAll((done) => {
                 client.request(
                     {
                         endpoint: "tokenization-service_get_item",
                         payload_text: JSON.stringify({
                             item_id: 1
-                        }),
+                        })
                     },
                     (err, res) => {
                         response = res;
@@ -66,14 +66,14 @@ describe("Given Airlock is running", () => {
                     }
                 );
             });
-    
+
             it("Then returns the item", () => {
                 expect(JSON.parse(response.response_text)).toEqual({
-                    "data": {
-                        "XP": "97"
+                    data: {
+                        XP: "97"
                     },
-                    "item_id": 1,
-                    "quantity": 0
+                    item_id: 1,
+                    quantity: 0
                 });
             });
         });

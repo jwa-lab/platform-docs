@@ -1,20 +1,29 @@
 {
-  "private": true,
-  "scripts": {
-    "start": "jwalab start",
-    "stop": "jwalab stop",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@grpc/proto-loader": "^0.5.6",
-    "grpc": "^1.24.4",
-    "jest": "^26.6.3"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "devDependencies": {
-    "@jwalab/community-platform": "^0.0.11",
-    "jest-environment-node": "^26.6.2"
-  }
+    "private": true,
+    "scripts": {
+        "start": "jwalab start",
+        "stop": "jwalab stop",
+        "test": "jest",
+        "prettier": "npx prettier --write .",
+        "lint": "eslint ./tests/ --ext .js"
+    },
+    "dependencies": {
+        "@grpc/proto-loader": "^0.5.6",
+        "grpc": "^1.24.4",
+        "jest": "^26.6.3"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    },
+    "devDependencies": {
+        "@jwalab/community-platform": "^0.0.11",
+        "eslint": "^7.20.0",
+        "eslint-config-esnext": "^4.1.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-plugin-commonjs": "^1.0.2",
+        "eslint-plugin-jest": "^24.1.5",
+        "eslint-plugin-node": "^11.1.0",
+        "jest-environment-node": "^26.6.2",
+        "prettier": "^2.2.1"
+    }
 }

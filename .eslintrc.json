@@ -1,0 +1,12 @@
+{
+    "extends": ["esnext"],
+    "plugins": ["jest", "commonjs"],
+    "env": {
+      "commonjs": true,
+      "jest/globals": true,
+      "node": true
+    },
+    "rules": {
+      "import/no-commonjs": 0
+    }
+  }
