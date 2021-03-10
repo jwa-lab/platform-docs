@@ -30,12 +30,18 @@ describe("Given Airlock is running", () => {
         let response;
 
         beforeAll((done) => {
+            jest.setTimeout(10000);
             client.request(
                 {
                     endpoint: "tokenization-service_add_item",
-                    payload_text:
-                        '{"data":{"XP":"97"},"item_id":1,"quantity":0}'
+                    payload_text: JSON.stringify({
+                        data: {"XP":"97"},
+                        name: "Christiano Ronaldo",
+                        item_id: 1,
+                        quantity: 0
+                    })
                 },
+                { max: 1, timeout: 10000 },
                 (err, res) => {
                     response = res;
                     done();
@@ -43,9 +49,12 @@ describe("Given Airlock is running", () => {
             );
         });
 
-        it("Then returns its item_id", () => {
+        it("Then returns the new item", () => {
             expect(JSON.parse(response.response_text)).toEqual({
-                item_id: 1
+                data: {"XP":"97"},
+                name: "Christiano Ronaldo",
+                item_id: 1,
+                quantity: 0
             });
         });
 
@@ -72,6 +81,7 @@ describe("Given Airlock is running", () => {
                     data: {
                         XP: "97"
                     },
+                    name: "Christiano Ronaldo",
                     item_id: 1,
                     quantity: 0
                 });

@@ -33,8 +33,12 @@ describe("Given Airlock is running", () => {
             client.request(
                 {
                     endpoint: "item-store_add_item",
-                    payload_text:
-                        '{"data":{"XP":"97"},"item_id":1,"quantity":0}'
+                    payload_text: JSON.stringify({
+                        data: {"XP":"97"},
+                        name: "Christiano Ronaldo",
+                        item_id: 1,
+                        quantity: 0
+                    })
                 },
                 (err, res) => {
                     response = res;
@@ -48,6 +52,7 @@ describe("Given Airlock is running", () => {
                 data: {
                     XP: "97"
                 },
+                name: "Christiano Ronaldo",
                 item_id: 1,
                 quantity: 0
             });
@@ -74,8 +79,8 @@ describe("Given Airlock is running", () => {
                 );
             });
 
-            it("Then echoes the update back", () => {
-                expect(JSON.parse(response.response_text).data).toEqual({
+            it("Then echoes the item back", () => {
+                expect(JSON.parse(response.response_text).item).toEqual({
                     item_id: 1,
                     data: {
                         XP: "80"
@@ -107,6 +112,7 @@ describe("Given Airlock is running", () => {
                         data: {
                             XP: "80"
                         },
+                        name: "Christiano Ronaldo",
                         quantity: 0
                     });
                 });
