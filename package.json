@@ -16,7 +16,7 @@
         "testEnvironment": "node"
     },
     "devDependencies": {
-        "@jwalab/community-platform": "^0.0.11",
+        "@jwalab/community-platform": "^0.0.12",
         "eslint": "^7.20.0",
         "eslint-config-esnext": "^4.1.0",
         "eslint-config-prettier": "^8.0.0",
