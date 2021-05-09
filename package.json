@@ -1,29 +1,39 @@
 {
-    "private": true,
-    "scripts": {
-        "start": "jwalab start",
-        "stop": "jwalab stop",
-        "test": "jest",
-        "prettier": "npx prettier --write .",
-        "lint": "eslint ./tests/ --ext .js"
-    },
-    "dependencies": {
-        "@grpc/proto-loader": "^0.5.6",
-        "grpc": "^1.24.4",
-        "jest": "^26.6.3"
-    },
-    "jest": {
-        "testEnvironment": "node"
-    },
-    "devDependencies": {
-        "@jwalab/community-platform": "^0.0.12",
-        "eslint": "^7.20.0",
-        "eslint-config-esnext": "^4.1.0",
-        "eslint-config-prettier": "^8.0.0",
-        "eslint-plugin-commonjs": "^1.0.2",
-        "eslint-plugin-jest": "^24.1.5",
-        "eslint-plugin-node": "^11.1.0",
-        "jest-environment-node": "^26.6.2",
-        "prettier": "^2.2.1"
-    }
+  "name": "platform-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.75",
+    "@docusaurus/preset-classic": "2.0.0-alpha.75",
+    "@mdx-js/react": "^1.6.21",
+    "@svgr/webpack": "^5.5.0",
+    "clsx": "^1.1.1",
+    "file-loader": "^6.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "url-loader": "^4.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
