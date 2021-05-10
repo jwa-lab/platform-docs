@@ -18,8 +18,10 @@ jobs:
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
+          rm yarn.lock
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
+          rm package-lock.json
           npm ci
           else
           npm i
