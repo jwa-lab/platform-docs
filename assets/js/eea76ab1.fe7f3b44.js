@@ -1,0 +1,1 @@
+(self.webpackChunkplatform_docs=self.webpackChunkplatform_docs||[]).push([[721],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/welcome"}]}')}}]);

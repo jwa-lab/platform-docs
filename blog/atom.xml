@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jwa-lab.github.io/platform-docs/blog</id>
+    <title>JWA Platform Blog</title>
+    <updated>2021-05-09T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://jwa-lab.github.io/platform-docs/blog"/>
+    <subtitle>JWA Platform Blog</subtitle>
+    <icon>https://jwa-lab.github.io/platform-docs/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>welcome</id>
+        <link href="https://jwa-lab.github.io/platform-docs/blog/welcome"/>
+        <updated>2021-05-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to the JWA Platform blog!]]></summary>
+    </entry>
+</feed>
