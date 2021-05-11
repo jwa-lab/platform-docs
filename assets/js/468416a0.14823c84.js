@@ -1,1 +1,0 @@
-(self.webpackChunkplatform_docs=self.webpackChunkplatform_docs||[]).push([[614],{8738:function(a){"use strict";a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"blockchain","name":"blockchain","count":1,"permalink":"/blog/tags/blockchain"}')}}]);
