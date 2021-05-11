@@ -2,8 +2,8 @@
 module.exports = {
   title: 'JWA Platform',
   tagline: 'Enable your video games with advanced gaming concepts',
-  url: 'https://jwa-lab.github.io/platform-docs/',
-  baseUrl: '/',
+  url: 'https://jwa-lab.github.io',
+  baseUrl: '/platform-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
