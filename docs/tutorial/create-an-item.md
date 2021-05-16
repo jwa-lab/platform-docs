@@ -28,7 +28,10 @@ so we'll only create 10 of them. We'll start by adding the golden goose to the `
 Which will return a new `item_id`:
 
 ```json
-{"item_id":1}
+{
+    // item id is a number. It starts with 1 and increased by 1, so an item id looks like 1, 2, 1000, 1337...
+    "item_id": <item id>
+}
 ```
 
 ## Retrieve item
@@ -36,7 +39,7 @@ Which will return a new `item_id`:
 We have now created our first item in the platform. Let's retrieve it to see what it looks like:
 
 ```bash
-% curl --location --request GET 'http://localhost:8000/item-store/item/1'
+% curl --location --request GET 'http://localhost:8000/item-store/item/<item id>'
 ```
 
 ```json
@@ -49,7 +52,8 @@ We have now created our first item in the platform. Let's retrieve it to see wha
     },
     "total_quantity": 10,
     "available_quantity": 10,
-    "item_id": 1
+    // Reflect the item id back. It's a number like 1, 2, 1000, 1337..
+    "item_id": <item id>
 }
 ```
 
@@ -58,7 +62,7 @@ When the item was created, an id was automatically generated for us.
 The fact that the `item_id` is an integer and that it monotonically increases will be important later, let's keep that in mind.
 When we retrieve the item, the `item_id` is now part of the item.
 
-## Update item.
+## Update item
 
 Let's assume that we made a mistake when we created the item. A Golden Goose is actually more than rare, it's legendary and there can only be one.
 
@@ -74,20 +78,23 @@ Let's assume that we made a mistake when we created the item. A Golden Goose is 
     },
     "total_quantity": 1,
     "available_quantity": 1,
-    "item_id": 1
+    # The item id is the numeric id that was returns when the item was first created. it looks like 1, 2, 1000, 1337..
+    "item_id": <item id>
 }'
 ```
 
 Which returns the `item_id`:
 
 ```json
-{"item_id":1}
+{
+    "item_id": <item id>
+}
 ```
 
 Let's retrieve the item again to verify that it was updated:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/item/1'
+curl --location --request GET 'http://localhost:8000/item-store/item/<item id>'
 ```
 
 ```json
@@ -100,7 +107,7 @@ curl --location --request GET 'http://localhost:8000/item-store/item/1'
     },
     "total_quantity": 1,
     "available_quantity": 1,
-    "item_id": 1
+    "item_id": <item id>
 }
 ```
 
