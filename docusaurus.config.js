@@ -61,7 +61,7 @@ module.exports = {
           ],
         },
         {
-          title: 'PlayTIX',
+          title: 'PlayTiX',
           items: [
             {
               label: 'Home',
