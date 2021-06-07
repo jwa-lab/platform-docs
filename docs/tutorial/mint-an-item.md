@@ -11,7 +11,7 @@ Moving the item to the blockchain will effectively create our first NFT!
 
 
 ```bash
-% curl --location --request PUT 'http://localhost:8000/tokenization-service/warehouse/<item id>'
+% curl --location --request PUT 'http://localhost:8000/api/tokenization-service/warehouse/<item id>'
 ```
 
 Which will return the object as it was retrieved from the item store:
@@ -41,7 +41,7 @@ We have now tokenized, or minted, our first item as an NFT. Let take a look in t
 First, let's obtain the smart contract address that holds all items:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/tokenization-service/info'
+curl --location --request GET 'http://localhost:8000/api/tokenization-service/info'
 ```
 
 which returns:
@@ -225,7 +225,7 @@ Here's our golden goose!
 We know the id of our warehouse item, instead of looking directly inside the blockchain, let's retrieve it via a rest call:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/tokenization-service/warehouse/1'
+curl --location --request GET 'http://localhost:8000/api/tokenization-service/warehouse/1'
 ```
 
 Which returns

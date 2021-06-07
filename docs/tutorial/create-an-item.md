@@ -11,7 +11,7 @@ if you're a farmer raising poultry, you may hope to one day find a golden goose.
 so we'll only create 10 of them. We'll start by adding the golden goose to the `item-store`:
 
 ```bash
-% curl --location --request POST 'http://localhost:8000/item-store/item' \
+% curl --location --request POST 'http://localhost:8000/api/item-store/item' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Golden Goose",
@@ -39,7 +39,7 @@ Which will return a new `item_id`:
 We have now created our first item in the platform. Let's retrieve it to see what it looks like:
 
 ```bash
-% curl --location --request GET 'http://localhost:8000/item-store/item/<item id>'
+% curl --location --request GET 'http://localhost:8000/api/item-store/item/<item id>'
 ```
 
 ```json
@@ -67,7 +67,7 @@ When we retrieve the item, the `item_id` is now part of the item.
 Let's assume that we made a mistake when we created the item. A Golden Goose is actually more than rare, it's legendary and there can only be one.
 
 ```bash
-% curl --location --request PUT 'http://localhost:8000/item-store/item/1' \
+% curl --location --request PUT 'http://localhost:8000/api/item-store/item/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Golden Goose",
@@ -94,7 +94,7 @@ Which returns the `item_id`:
 Let's retrieve the item again to verify that it was updated:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/item/<item id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/item/<item id>'
 ```
 
 ```json
