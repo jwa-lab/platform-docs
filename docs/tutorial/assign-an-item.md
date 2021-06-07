@@ -18,7 +18,7 @@ A user is a simple entity in the `item store` used to group items that belong to
 Let's create our first user. For convenience, we do assign it a `user_id` but it doesn't need to be unique, it can be used to link the JWA Platform's user id to a user id in the video game editor's database for instance.
 
 ```bash
-curl --location --request POST 'http://localhost:8000/item-store/user' \
+curl --location --request POST 'http://localhost:8000/api/item-store/user' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     # user id is custom, doesn't need to be unique and is specified by the video game editor. It needs to be a number though.
@@ -41,7 +41,7 @@ We can now retrieve a user using its unique id:
 
 ```bash
 # the <document alphanum id> is a string and it looks something like "GvzrcnkBKbvuvgx_4Nrt"
-curl --location --request GET 'http://localhost:8000/item-store/user/<document alphanum id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/user/<document alphanum id>'
 ```
 
 Which returns the initial user:
@@ -63,7 +63,7 @@ We now have an item in the `item-store`, and a `user` as well. We can assign the
 For that, we will pass the user's unique id, which looke like `GvzrcnkBKbvuvgx_4Nrt` and the item `id` that we'd like to assign:
 
 ```bash
-curl --location --request POST 'http://localhost:8000/item-store/inventory' \
+curl --location --request POST 'http://localhost:8000/api/item-store/inventory' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     # user id is a string and it looks like "GvzrcnkBKbvuvgx_4Nrt"
@@ -98,7 +98,7 @@ The inventory item tracks the unique id for the item, the user id, and some data
 Let's see what an inventory item looks like:
 
 ```curl
-curl --location --request GET 'http://localhost:8000/item-store/inventory/<inventory item id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/inventory/<inventory item id>'
 ```
 
 ```json
@@ -117,7 +117,7 @@ The `data` field only stores the fields that have changed from the original item
 So how do I know what the item looks like? Simple, remember that the `item_id` is unique. So if I take id `<item id>` and retrieve the item in the item store, I can get its current status:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/item/<item id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/item/<item id>'
 ```
 
 Which returns:
@@ -148,7 +148,7 @@ In theory, we could assign the same item multiple times to the same user. What i
 So let's try to assign the Goolden Goose again, to the same user:
 
 ```bash
-curl --location --request POST 'http://localhost:8000/item-store/inventory' \
+curl --location --request POST 'http://localhost:8000/api/item-store/inventory' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "user_id": "<user id>",
@@ -176,7 +176,7 @@ Let's say the goose has evolved and is now made of platinum, we could update it 
 ```bash
 # remember that we received the inventory item id (looks like "efzvcnkBKbvuvgx_ptpb") when we first assigned the item to a user.
 # don't include the wrapping quotes " in the url
-curl --location --request PUT 'http://localhost:8000/item-store/inventory/<inventory item id>' \
+curl --location --request PUT 'http://localhost:8000/api/item-store/inventory/<inventory item id>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "attribute": "platinum"
@@ -186,7 +186,7 @@ curl --location --request PUT 'http://localhost:8000/item-store/inventory/<inven
 We have updated the `attribute` field, let's verify it:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/inventory/<inventory item id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/inventory/<inventory item id>'
 ```
 
 Which returns:
@@ -205,7 +205,7 @@ Which returns:
 Remember that the original item can't change, it's immutable:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/item/1'
+curl --location --request GET 'http://localhost:8000/api/item-store/item/1'
 ```
 
 ```json

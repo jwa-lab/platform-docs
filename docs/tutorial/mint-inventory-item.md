@@ -15,7 +15,7 @@ We have created an implicit inventory in the `item-store` when we created the us
 In fact, we're going to create a new blockchain inventory first and assign it to that user.
 
 ```bash
-curl --location --request POST 'http://localhost:8000/tokenization-service/inventory' \
+curl --location --request POST 'http://localhost:8000/api/tokenization-service/inventory' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     # The user id is the alpha numeric unique Id returned when the user was created. It looks like "GvzrcnkBKbvuvgx_4Nrt"
@@ -34,7 +34,7 @@ Which returns the `user_id`:
 Let's verify that the user has an inventory assigned:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/user/<user id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/user/<user id>'
 ```
 
 Which returns:
@@ -64,7 +64,7 @@ It was assigned when we created the inventory item.
 If we look at the content of this inventory item:
 
 ```bash
-curl --location --request GET 'http://localhost:8000/item-store/inventory/<inventory item id>'
+curl --location --request GET 'http://localhost:8000/api/item-store/inventory/<inventory item id>'
 ```
 
 ```json
@@ -81,7 +81,7 @@ curl --location --request GET 'http://localhost:8000/item-store/inventory/<inven
 We can see that instance `1` of item `<item id>` belongs to user `<user id>`. The tokenization service can assign the item to the right smart contract in the blockchain:
 
 ```
-curl --location --request PUT 'http://localhost:8000/tokenization-service/inventory/<inventory item id>'
+curl --location --request PUT 'http://localhost:8000/api/tokenization-service/inventory/<inventory item id>'
 ```
 
 Which returns:
