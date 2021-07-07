@@ -10,7 +10,7 @@ In order to start using the JWA Platform, you will have to use a JWT in each of 
 This token will be valid until the next startup of the platform, therefore, you can setup it once in the provided
 Postman collection, or in your own for your development session without having to worry about its expiration date.
 
-There two ways of getting this JWT, by copying it from the `authorization-service` logs, or by calling the dedicated endpoint.
+There are two ways to get this JWT. By copying it from the `authorization-service` logs, or by calling the dedicated endpoint.
 
 ## From the service logs
 
