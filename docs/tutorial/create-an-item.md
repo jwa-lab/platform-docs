@@ -78,7 +78,7 @@ Let's assume that we made a mistake when we created the item. A Golden Goose is 
     },
     "total_quantity": 1,
     "available_quantity": 1,
-    # The item id is the numeric id that was returns when the item was first created. it looks like 1, 2, 1000, 1337..
+    # The item id is the numeric id that was returned when the item was first created. it looks like 1, 2, 1000, 1337..
     "item_id": <item id>
 }'
 ```

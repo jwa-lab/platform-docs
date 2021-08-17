@@ -60,7 +60,7 @@ the user in the platform, we need to use the unique id which looks like `Gvzrcnk
 ## Assign item
 
 We now have an item in the `item-store`, and a `user` as well. We can assign the item to the user.
-For that, we will pass the user's unique id, which looke like `GvzrcnkBKbvuvgx_4Nrt` and the item `id` that we'd like to assign:
+For that, we will pass the user's unique id, which looks like `GvzrcnkBKbvuvgx_4Nrt` and the item `id` that we'd like to assign:
 
 ```bash
 curl --location --request POST 'http://localhost:8000/api/item-store/inventory' \
