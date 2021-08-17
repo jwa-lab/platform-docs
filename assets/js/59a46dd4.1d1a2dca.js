@@ -1,1 +1,0 @@
-(self.webpackChunkplatform_docs=self.webpackChunkplatform_docs||[]).push([[476],{1337:function(o){"use strict";o.exports=JSON.parse('{"permalink":"/platform-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
