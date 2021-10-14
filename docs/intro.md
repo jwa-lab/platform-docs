@@ -11,8 +11,8 @@ The JWA platform is a SaaS solution that combines multiple services for your vid
 
 The first services offered by the platform are:
 
-- Items: Efficiently manage video game items and store them on the blockchain as [NFTs](https://en.wikipedia.org/wiki/Non-fungible_token).
-- Users: Securely manage your video games' user accounts.
+- Item Service: Efficiently manage video game items and store them on the blockchain as [NFTs](https://en.wikipedia.org/wiki/Non-fungible_token).
+- Authorization Service: A Mock authorization service that provides test users for the platform
 
 ## How do I use it?
 
