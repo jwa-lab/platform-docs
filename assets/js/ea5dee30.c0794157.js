@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkplatform_docs=self.webpackChunkplatform_docs||[]).push([[989],{5166:function(s){s.exports=JSON.parse('{"allTagsPath":"/platform-docs/blog/tags","slug":"tezos","name":"tezos","count":1,"permalink":"/platform-docs/blog/tags/tezos"}')}}]);
