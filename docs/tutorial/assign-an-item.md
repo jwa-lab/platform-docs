@@ -40,11 +40,13 @@ We are going to assign item 1 to Player One and should be getting the following 
 }
 ```
 
-- `instance_number` indicates the Player 1 has received the first instance of that item. If we retrieved the corresponding item we would see that its `available_quantity` field is now `0` and the item can't be assigned anymore.
-- `data` is empty but should be populated with the values from the original item since it hasn't evolved yet. This issue is being fixed.
-- `tezos_block` and `tezos_contract_address` will contain the tokenization information, but tokenization hasn't happened yet.
+-   `instance_number` indicates the Player 1 has received the first instance of that item. If we retrieved the corresponding item we would see that its `available_quantity` field is now `0` and the item can't be assigned anymore.
+-   `data` is empty but should be populated with the values from the original item since it hasn't evolved yet. This issue is being fixed.
+-   `tezos_block` and `tezos_contract_address` will contain the tokenization information, but tokenization hasn't happened yet.
 
 ![assign-item](../../assets/assign-item.png)
+
+To locate the instance in the blockchain given its tokenization information, please follow [this documentation](/docs/tokenization/tezos).
 
 ## Retrieving an instance
 
