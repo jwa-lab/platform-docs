@@ -5,7 +5,19 @@ author: Olivier Scherrer
 author_title: CTO @ JWA Lab
 author_url: https://github.com/podefr
 author_image_url: https://avatars.githubusercontent.com/u/219256?s=400
-tags: [JWA, Item Service, Platform, documentation, blockchain, API, services, v0.1, tezos, work queue]
+tags:
+    [
+        JWA,
+        Item Service,
+        Platform,
+        documentation,
+        blockchain,
+        API,
+        services,
+        v0.1,
+        tezos,
+        work queue
+    ]
 ---
 
 Today we're excited to announce a new release of the Community Platform!
@@ -17,12 +29,12 @@ The team has been incredibly busy over the last few months to address the great 
 The biggest feedback we've received was around the developer experience. While the platform itself is easy to use, the "tokenization dance"
 that the combination of the `Item Store` and `Tokenization Service` APIs required was pretty awful:
 
-- We had to manage our items in `Item Store` and then instruct the `Tokenization Service` to sync up with `Item Store` to update the blockchain
-- While the calls to `Item store` were fast, the calls to `Tokenization Service` were synchronous with inherent blockchain delays built in. This meant an API that was difficult to use
- and API calls that could easily fail with unstable network or just timeout.
-- Creating item instances was even more complex as we had to introduce the notion of "users" to group instances by players. This was not a feature for our users
-but rather a technical requirement introduced by our design.
-- And then, some ids were numbers, some were unique ids, the whole thing was confusing.
+-   We had to manage our items in `Item Store` and then instruct the `Tokenization Service` to sync up with `Item Store` to update the blockchain
+-   While the calls to `Item store` were fast, the calls to `Tokenization Service` were synchronous with inherent blockchain delays built in. This meant an API that was difficult to use
+    and API calls that could easily fail with unstable network or just timeout.
+-   Creating item instances was even more complex as we had to introduce the notion of "users" to group instances by players. This was not a feature for our users
+    but rather a technical requirement introduced by our design.
+-   And then, some ids were numbers, some were unique ids, the whole thing was confusing.
 
 ## Performance
 
@@ -46,7 +58,7 @@ A refactoring of our smart contracts also allowed us to simplify managing item i
 ### Better performance
 
 The Tezos Work Queue is an incredible tool that receives tokenization requests at any rate necessary and then immediately sends an ACK back to the `Item Service` so the `Item Service` can keep treating new requests.
-At its own pace, the Tezos Work Queue will now interface with the blockchain to unqueue operations, execute them on the blockchain and wait for confirmation. 
+At its own pace, the Tezos Work Queue will now interface with the blockchain to unqueue operations, execute them on the blockchain and wait for confirmation.
 
 This change allowed for a blazing fast `Item Service` API as the heavy lifting is done in the background, and the `Item Service` is free to treat client requests.
 

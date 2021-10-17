@@ -59,14 +59,16 @@ this should return the original item with some additional information:
 }
 ```
 
-- `item_id`: We can see that the item_id has been added and is set to 1. This field can't be changed.
-- `studio_id`: the studio_id field contains the unique id for authenticated studio. This is a hard coded value from our mock authentication service but this will be a different value for each studio. This allows us to verify that only the owner of the item may change it or assign it to a user.
-- `tezos_block`: The block in which the item was tokenized! You can see it in the Tezos explorer started by the platform: http://localhost:8002/explorer/block/`<put your tezos block here>`
-- `tezos_contract_address`: The smart contract in which the item was tokenized. http://localhost:8002/explorer/contract/`<put the contract address here>`
+-   `item_id`: We can see that the item_id has been added and is set to 1. This field can't be changed.
+-   `studio_id`: the studio_id field contains the unique id for authenticated studio. This is a hard coded value from our mock authentication service but this will be a different value for each studio. This allows us to verify that only the owner of the item may change it or assign it to a user.
+-   `tezos_block`: The block in which the item was tokenized! You can see it in the Tezos explorer started by the platform: http://localhost:8002/explorer/block/`<put your tezos block here>`
+-   `tezos_contract_address`: The smart contract in which the item was tokenized. http://localhost:8002/explorer/contract/`<put the contract address here>`
 
 Please note that `tezos_block` represents the last block in which the item was persisted. If the item gets updated, the `tezos_block` field will only be updated when the new operation completes, and it will show the old value until then.
 
 ![get-item](../../assets/get-item.png)
+
+To locate the item in the blockchain given its tokenization information, please follow [this documentation](/docs/tokenization/tezos).
 
 ## Update item
 

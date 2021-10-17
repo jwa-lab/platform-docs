@@ -9,4 +9,3 @@ If you still have "hanging" containers after running `stop`, you may use the `ki
 ```sh
 $ jwalab kill
 ```
-

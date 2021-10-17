@@ -5,14 +5,14 @@ sidebar_position: 1
 # Getting started
 
 ## What will we do?
- 
+
 By following this tutorial you will be able to:
 
-- Run a complete JWA Platform on your local machine
-- Create a video game item and allocate a finite quantity
-- Tokenize it on the blockchain (mint an NFT)
-- Assign the item to a user and make it evolve
-- Transfer the item to another user
+-   Run a complete JWA Platform on your local machine
+-   Create a video game item and allocate a finite quantity
+-   Tokenize it on the blockchain (mint an NFT)
+-   Assign the item to a user and make it evolve
+-   Transfer the item to another user
 
 ## What do you need?
 
@@ -21,6 +21,11 @@ To use this platform, you will need the following tools installed on your local 
 1. [Node.js](https://nodejs.org/en/) with [NPM](https://www.npmjs.com/), to install the platform
 1. [Docker](https://www.docker.com/), to run the platform
 1. An HTTP Client such as [Postman](https://www.postman.com/) or [curl](https://curl.se/) to make API calls.
+
+## Related documentation
+
+We suggest you to complete the tutorial first, but if you're eager to understand how items/instances are tokenized on the blockchain, you may read [the Tokenization documentation](/docs/tokenization/tokenization) first.
+The [Tezos documentation](/docs/tokenization/tezos) helps you locate your tokenized items and instances in Tezos.
 
 ## Install
 

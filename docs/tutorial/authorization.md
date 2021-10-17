@@ -16,7 +16,7 @@ This will return a JWT which looks like this:
 
 ```json
 {
-    "token":"eyJ0eXAi...RGImmtDsSaa4ua_gnuyLvA"
+    "token": "eyJ0eXAi...RGImmtDsSaa4ua_gnuyLvA"
 }
 ```
 
@@ -27,4 +27,3 @@ Then click on the "PlayTiX | JWA Platform API Definition" Collection and paste t
 You will have to configure the token everytime the platform restarts.
 
 Now that we are ready to go, let's create NFTs!
-

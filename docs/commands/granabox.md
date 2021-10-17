@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # granabox (protocol)
 
-The community platform is running a Tezos sandbox to tokenize items. `Granabox` means a Tezos Sand_box_ (it's a Tezos node) running the _Granada_ protocol.
+The community platform is running a Tezos sandbox to tokenize items. `Granabox` means a Tezos Sand*box* (it's a Tezos node) running the _Granada_ protocol.
 To access the sandbox' client, you can use the `granabox` command:
 
 ```sh
@@ -19,4 +19,3 @@ This essentially means that you can pass any option to the client:
 ```sh
 $ jwalab granabox -- info
 ```
-
