@@ -12,22 +12,22 @@ An item is created and owned by a studio and is composed of a set of characteris
 
 When using the APIs to create/update an item, you will have to specify those fields.
 
-| Field                | Description                                                                       | Data type                                                               | Notes                                                                                                                                      |
-| -------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `frozen`             | Indicates if an item can still be modified or not                                 | `boolean`                                                               | Once set to true, an item can't be modified. This is enforced by the smart contract itself                                                 |
-| `name`               | Name of the item. This is free text and doesn't need to be unique                 | `string`                                                                | there's a max length of 100 chars                                                                                                          |
-| `data`               | An object containing the items characeteristics                                   | JSON Object, each value must be a `string`. E.g: `{ "color": "green" }` | Values can only be strings, no nesting allowed                                                                                             |
-| `total_quantity`     | The total number of items to be assigned                                          | `number`                                                                | Should be greater than `0`. There's no upper bound, but we believe that if an item is "too" available it may not make sense to tokenize it |
-| `available_quantity` | This number indicates how many items are left to be sold when the item is created | `number`                                                                | should be less than `total_quantity`. This field may become fully automated in a future release                                            |
+| Field            | Description                                                       | Data type                                                               | Notes                                                                                                                                      |
+| ---------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `frozen`         | Indicates if an item can still be modified or not                 | `boolean`                                                               | Once set to true, an item can't be modified. This is enforced by the smart contract itself                                                 |
+| `name`           | Name of the item. This is free text and doesn't need to be unique | `string`                                                                | there's a max length of 100 chars                                                                                                          |
+| `data`           | An object containing the items characeteristics                   | JSON Object, each value must be a `string`. E.g: `{ "color": "green" }` | Values can only be strings, no nesting allowed                                                                                             |
+| `total_quantity` | The total number of items to be assigned                          | `number`                                                                | Should be greater than `0`. There's no upper bound, but we believe that if an item is "too" available it may not make sense to tokenize it |
 
 <u>Automatically assigned fields:</u>
 
 When creating items, some fields are automatically added by the platform.
 
-| Field       | Description                  | Data type | Notes                                                                                                                                                              |
-| ----------- | ---------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `item_id`   | The item's id                | `number`  | The value in this field is automatically assigned to the item and may never be changed. It's used to locate the item in the blockchain                             |
-| `studio_id` | The studio unique identifier | `string`  | The value in this field comes from our directory of users. This allows us to know who owns the items and prevents studios from accessing items that they don't own |
+| Field                | Description                                                                       | Data type | Notes                                                                                                                                                              |
+| -------------------- | --------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `item_id`            | The item's id                                                                     | `number`  | The value in this field is automatically assigned to the item and may never be changed. It's used to locate the item in the blockchain                             |
+| `studio_id`          | The studio unique identifier                                                      | `string`  | The value in this field comes from our directory of users. This allows us to know who owns the items and prevents studios from accessing items that they don't own |
+| `available_quantity` | This number indicates how many items are left to be sold when the item is created | `number`  | Is initially set to `total_quantity` and then decreases by `1` for each instance assgined.                                                                         |
 
 <u>Tokenization related fields:</u>
 
