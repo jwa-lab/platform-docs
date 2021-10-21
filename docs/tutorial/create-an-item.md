@@ -18,17 +18,28 @@ the fields to these values in the Body tab.
         "type": "goose",
         "attribute": "gold"
     },
-    "total_quantity": 10,
-    "available_quantity": 10
+    "total_quantity": 10
 }
 ```
 
-And hit "send". This will return the item's new id:
+And hit "send". This will return the new item, including the automatically populated ones:
 
 ```json
 {
-    // item id is a number. It starts with 1 and increased by 1, so an item id looks like 1, 2, 1000, 1337...
-    "item_id": 1
+    "item_id": 1, // item id is a number. It starts with 1 and increases by 1
+    "studio_id": "studio_id", // The studio id, coming from the Auth Token
+    "name": "Golden Goose",
+    "total_quantity": 10,
+    "available_quantity": 10, // Automatically set to `total_quantity`
+    "frozen": false,
+    "data": {
+        "type": "goose",
+        "level": "rare",
+        "attribute": "gold"
+    },
+    "fulltext": "goose rare gold Golden Goose",
+    "tezos_contract_address": null, // The tokenization information, will be set when the item is tokenized
+    "tezos_block": null
 }
 ```
 
@@ -46,16 +57,17 @@ this should return the original item with some additional information:
     "item_id": 1,
     "studio_id": "studio_id",
     "name": "Golden Goose",
-    "available_quantity": 10,
     "total_quantity": 10,
+    "available_quantity": 10,
     "frozen": false,
     "data": {
         "type": "goose",
         "level": "rare",
         "attribute": "gold"
     },
-    "tezos_block": "BMMJJGZuKCwoF9BytcMDkurjdtRkWnwSTVKotNCFpen3oqCFFts",
-    "tezos_contract_address": "KT1LoG46ak7rDa2yE7fT4nrF432HMQVUi17V"
+    "fulltext": "goose rare gold Golden Goose",
+    "tezos_contract_address": "KT1LeRvbGcDYz4tczEgUL7xNs6rxznRCQFdP",
+    "tezos_block": "BLSHjGTKQfkBEMDgBAve9oxHyXkrFuAzo36EfSjVdkPbyRujFfi"
 }
 ```
 
@@ -85,8 +97,7 @@ Locate the "Update an item" request and update the required values, then hit Sen
         "type": "goose",
         "attribute": "gold"
     },
-    "total_quantity": 1,
-    "available_quantity": 1
+    "total_quantity": 1
 }
 ```
 
