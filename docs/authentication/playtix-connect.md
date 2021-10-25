@@ -51,9 +51,24 @@ See: https://developer.okta.com/docs/guides/implement-grant-type/authcodepkce/ma
 
 In the PlayTiX Developer Portal, you can find:
 - your `client_id` and `client_secret`
-- the `authorization_url`
-- the `tokens_url`
-- the `infos_url`
+- the `/authorize` endpoint
+- the `/token` endpoint
+- the `/userinfo` endpoint
+
+As of now, the PlayTiX Developer Portal is not available. If you want to integrate your app please contact us.
+
+For now, the defaults to use for the OAuth2 / OpenID endpoints are :
+
+- **authorize** : `https://playtix.okta.com/oauth2/aus2dahc1hKc6YaOl5d7/v1/authorize`
+- **token** : `https://playtix.okta.com/oauth2/aus2dahc1hKc6YaOl5d7/v1/token`
+- **userinfo** (optional) : `https://playtix.okta.com/oauth2/aus2dahc1hKc6YaOl5d7/v1/userinfo`
+
+You will also have to use mandatory scopes in order to either get the user's information, or a refresh token.
+
+- `profile` To get the user's default profile information such as his username.
+- `email` To get the user's email address.
+- `openid` Which is required if you ask for the user's profile.
+- `offline_access` Which is required if you want a refresh token.
 
 You also have to set up at least one `redirect_uri` for your game.
 
@@ -61,6 +76,19 @@ If you run the **Authorization Code flow** from your backend, the `redirect_uri`
 like `https://my.app.com/playtix-connect/auth/callback`.  
 If you run the **Authorization Code flow with PKCE** from your frontend, the `redirect_uri` must use a custom 
 app protocol like `myapp://`
+
+At the end, your authorize request will require the following parameters :
+
+- A valid `client_id`.
+- The required `scope`.
+- A registered `redirect_uri`.
+- A random string for the `state`.
+
+Ex:
+`https://playtix.{...}/v1/authorize?client_id=my_client_id&scope=profile%20openid%20email%20offline_access&redirect_uri=my_redirect_uri&state=random_string`
+
+You can find a more information about the endpoints here : 
+https://developer.okta.com/docs/reference/api/oidc/#endpoints
 
 ### Get the tokens
 
