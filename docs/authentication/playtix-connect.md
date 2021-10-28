@@ -143,21 +143,21 @@ What do we need to do ?
 - Create a SHA256 hash from this string.
 - Encode this hash in Base64 url-safe or URL Encoded.
 
-Let's say, our random string is, we will call it, the `Code Verifier`.
-```
+Let's say, our random string is the following one. We will call it the `Code Verifier`.
+```javascript
 // code_verifier
 const my_random_string_verifier = "jh7divpjGX86iqMfcPFiLcAkuKUGvOQFTQhksOQAzc5"; 
 ```
 
 We can hash our string with:
-```
+```javascript
 function sha256(buffer) {
     return crypto.createHash('sha256').update(buffer).digest();
 }
 ```
 
 And encode our hash with:
-```
+```javascript
 function base64URLEncode(str) {
     return str.toString('base64')
         .replace(/\+/g, '-')
@@ -167,12 +167,12 @@ function base64URLEncode(str) {
 ```
 
 The computed hash, or `Code Challenge` will look like:
-```
+```javascript
 var code_challenge = base64URLEncode(sha256(my_random_string_verifier));
 ```
 
 To put it together:
-```
+```javascript
 const crypto = require('crypto');
 
 /* 
@@ -204,7 +204,7 @@ Here is a C# reference.
 Details can be found above, in the NodeJS reference.
 
 
-```
+```csharp
 using System;
 using System.Text;
 using System.Security.Cryptography;
