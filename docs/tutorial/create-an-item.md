@@ -26,11 +26,11 @@ And hit "send". This will return the new item, including the automatically popul
 
 ```json
 {
-    "item_id": 1, // item id is a number. It starts with 1 and increases by 1
-    "studio_id": "studio_id", // The studio id, coming from the Auth Token
+    "item_id": 1,
+    "studio_id": "studio_id",
     "name": "Golden Goose",
     "total_quantity": 10,
-    "available_quantity": 10, // Automatically set to `total_quantity`
+    "available_quantity": 10,
     "frozen": false,
     "data": {
         "type": "goose",
@@ -38,8 +38,7 @@ And hit "send". This will return the new item, including the automatically popul
         "attribute": "gold"
     },
     "fulltext": "goose rare gold Golden Goose",
-    "tezos_contract_address": null, // The tokenization information, will be set when the item is tokenized
-    "tezos_block": null
+    "tezos_operation_hash": null // The tokenization operation information, will be set when the tokenization request is sent.
 }
 ```
 
@@ -66,17 +65,15 @@ this should return the original item with some additional information:
         "attribute": "gold"
     },
     "fulltext": "goose rare gold Golden Goose",
-    "tezos_contract_address": "KT1LeRvbGcDYz4tczEgUL7xNs6rxznRCQFdP",
-    "tezos_block": "BLSHjGTKQfkBEMDgBAve9oxHyXkrFuAzo36EfSjVdkPbyRujFfi"
+    "tezos_operation_hash": "ooRA2QZBYa9oDN7JibP6Em9yswNDZA9fTxmiztrdwnWF3D1X1B2"
 }
 ```
 
 -   `item_id`: We can see that the item_id has been added and is set to 1. This field can't be changed.
 -   `studio_id`: the studio_id field contains the unique id for authenticated studio. This is a hard coded value from our mock authentication service but this will be a different value for each studio. This allows us to verify that only the owner of the item may change it or assign it to a user.
--   `tezos_block`: The block in which the item was tokenized! You can see it in the Tezos explorer started by the platform: http://localhost:8002/explorer/block/`<put your tezos block here>`
--   `tezos_contract_address`: The smart contract in which the item was tokenized. http://localhost:8002/explorer/contract/`<put the contract address here>`
+-   `tezos_operation_hash`: The operation hash that tracks the operation. You can track the operation status in the Tezos explorer started by the platform: http://localhost:8002/explorer/op/`<put the tezos operation hash here>`
 
-Please note that `tezos_block` represents the last block in which the item was persisted. If the item gets updated, the `tezos_block` field will only be updated when the new operation completes, and it will show the old value until then.
+Please note that `tezos_operation_hash` represents the last operation that was executed on that item. If the item gets updated, the `tezos_operation_hash` field will only be updated when the new operation is sent, and it will show the old value until then.
 
 ![get-item](../../assets/get-item.png)
 
@@ -111,8 +108,16 @@ Awesome, we can now create, update and get items.
 
 You may have noticed the `frozen` field. Setting it to `true` means that the item may no longer be updated. This should give confidence to your users that the items they've purchased can't change anymore.
 There is a check in the smart contracts to verify the value of the `frozen` field, so this is set in stone and can't be changed just like the smart contract itself can't change.
-We will soon add a convenience method for freezing an item, but for now you can do so by updating an item.
+To freeze the item, locate the "Freeze an item." request, open it and set the `item_id` in the body:
 
-![freeze-item](../../assets/freeze-item.png)
+```json
+{
+    "item_id": 1
+}
+```
+
+![freeze-item](../../assets/freeze-item.png).
+
+Note: it's also possible to freeze an item by using the `update item` endpoint and simply setting the `frozen` value to true.
 
 Great! Let's now assign items to users!

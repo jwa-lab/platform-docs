@@ -38,8 +38,7 @@ When items are tokenized, some additional fields are populated so we can find ou
 
 | Field                    | Description                                        | Data type | Notes                                                                                                                                                                                                                               |
 | ------------------------ | -------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tezos_block`            | The tezos block in which the transaction was baked | `string`  | The last time the item was tokenized, it was tokenized in this block. There may be some delay between a tokenization request, or change in the item's data, and the moment the item is baked into a block and this field is updated |
-| `tezos_contract_address` | The smart contract where this item is stored       | `string`  | Using the smart contract address and the item_id it's possible to find the item in the blockchain                                                                                                                                   |
+| `tezos_operation_hash`            | The tezos operation to track the instance's tokenization | `string`  | The last time the instance was tokenized, it was tokenized in this operation. There may be some delay between a tokenization request, or change in the instance's data, and the moment the instance is baked into a block and this field is updated |                                                                                                                                |
 
 ## Final characteristics of an instance
 
