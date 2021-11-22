@@ -80,10 +80,20 @@ We can see that our item with `instance_number` `1` is under the key `exprugozCN
 So we can find our instance under `localhost:8002/explorer/bigmap/4/<key>`:
 
 ```sh
-$  % curl localhost:8002/explorer/bigmap/4/exprugozCNaQ1jWWSpTQsB5WD9dvnTLemPK7SeLyqPw1DQUB8CFhvA
+$  curl localhost:8002/explorer/bigmap/4/exprugozCNaQ1jWWSpTQsB5WD9dvnTLemPK7SeLyqPw1DQUB8CFhvA
 {"key":{"instance_number":"1","item_id":"1"},"key_hash":"exprugozCNaQ1jWWSpTQsB5WD9dvnTLemPK7SeLyqPw1DQUB8CFhvA","value":{"data":{},"user_id":"Mr 2"}}
 ```
 
 And that's it. Our instance is fully described in the blockchain.
 
 We can see that the `instances` bigmap uses composite keys, composed of the `item_id` and `instance_number`. The bigmap has to create a `hash` of this composite key to index the bigmap, hence the additional step.
+
+## Monitoring an operation
+
+When an operation has been sent to the blockchain, its status can be monitored using the `tezos_operation_hash` value:
+
+```sh
+$ curl localhost:8002/explorer/op/<tezos_operation_hash>
+```
+
+This will return a json containing the status of the operation, the block, the contract impacted, the details of the operation, and many other interesting pieces of information!

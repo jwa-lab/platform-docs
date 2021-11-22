@@ -34,15 +34,18 @@ We are going to assign item 1 to Player One and should be getting the following 
     "item_id": 1,
     "user_id": "Player One",
     "instance_number": 1,
-    "data": {},
-    "tezos_block": null,
-    "tezos_contract_address": null
+    "data": {
+        "type": "goose",
+        "level": "legendary",
+        "attribute": "gold"
+    },
+    "tezos_operation_hash": null
 }
 ```
 
 -   `instance_number` indicates the Player 1 has received the first instance of that item. If we retrieved the corresponding item we would see that its `available_quantity` field is now `0` and the item can't be assigned anymore.
 -   `data` is empty but should be populated with the values from the original item since it hasn't evolved yet. This issue is being fixed.
--   `tezos_block` and `tezos_contract_address` will contain the tokenization information, but tokenization hasn't happened yet.
+-   `tezos_operation_hash` will contain the operation hash to track the tokenization status, but tokenization hasn't happened yet.
 
 ![assign-item](../../assets/assign-item.png)
 
@@ -66,12 +69,11 @@ This will return the new instance, which is clearly assigned to a user, has the 
         "level": "legendary",
         "attribute": "gold"
     },
-    "tezos_block": "BMEnFoS3bBb1NzPLqqdeSLW6opx9J2Cov4bPELF8P1e1JjnRexw",
-    "tezos_contract_address": "KT1LoG46ak7rDa2yE7fT4nrF432HMQVUi17V"
+    "tezos_operation_hash": "oooBew1cZZoziALr7Y7VF1KyngVGRZt32VnrHXFxyyvCH36A9u2"
 }
 ```
 
-![get-item](../../assets/get-item.png)
+![get-instance](../../assets/get-instance.png)
 
 ## Updating an instance
 
