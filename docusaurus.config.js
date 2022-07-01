@@ -38,8 +38,12 @@ module.exports = {
                     title: "Docs",
                     items: [
                         {
-                            label: "Tutorial",
+                            label: "Documentation",
                             to: "/docs/intro"
+                        },
+                        {
+                            label: "API reference",
+                            to: "https://api.playtix.team/docs"
                         }
                     ]
                 },
@@ -52,12 +56,8 @@ module.exports = {
                         },
                         {
                             label: "GitHub",
-                            href: "https://github.com/jwa-lab/community-platform"
+                            href: "https://github.com/jwa-lab"
                         },
-                        {
-                            label: "Help",
-                            to: "/docs/help"
-                        }
                     ]
                 },
                 {
