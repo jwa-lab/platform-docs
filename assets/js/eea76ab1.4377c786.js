@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkplatform_docs=self.webpackChunkplatform_docs||[]).push([[721],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"v0.1 release! Platform now includes Item Service","permalink":"/platform-docs/blog/v0.1-item-service"},{"title":"Welcome","permalink":"/platform-docs/blog/welcome"}]}')}}]);

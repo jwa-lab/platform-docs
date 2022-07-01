@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkplatform_docs=self.webpackChunkplatform_docs||[]).push([[3947],{1577:function(e){e.exports=JSON.parse('{"allTagsPath":"/platform-docs/blog/tags","slug":"item-service","name":"item service","count":1,"permalink":"/platform-docs/blog/tags/item-service"}')}}]);
