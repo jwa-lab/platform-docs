@@ -11,11 +11,6 @@ The JWA platform is a SaaS solution that combines multiple services for your vid
 
 The first services offered by the platform are:
 
--   Item Service: Efficiently manage video game items and store them on the blockchain as [NFTs](https://en.wikipedia.org/wiki/Non-fungible_token).
--   Authorization Service: A Mock authorization service that provides test users for the platform
-
-## How do I use it?
-
-You can simply follow our tutorial, setup a local JWA Platform and start creating [NFTs](https://en.wikipedia.org/wiki/Non-fungible_token) today.
-
-The platform will soon be offered as a Cloud solution, follow our [blog](/blog) for updates.
+- Item Service: Efficiently manage video game items and store them on the blockchain as [NFTs](https://en.wikipedia.org/wiki/Non-fungible_token).
+- Resource Service: Manage in-game resources and allow players to convert them to [FTs](https://www.ledger.com/academy/fungible-token-categories-explained)
+- PlayTiX Connect: An authentication service that allow you to manage player's identities 
