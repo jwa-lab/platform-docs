@@ -4,21 +4,14 @@
         <title>JWA Platform Blog</title>
         <link>https://jwa-lab.github.io/blog</link>
         <description>JWA Platform Blog</description>
-        <lastBuildDate>Tue, 12 Oct 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Jul 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
-        <item>
-            <title><![CDATA[v0.1 release! Platform now includes Item Service]]></title>
-            <link>https://jwa-lab.github.io/platform-docs/blog/v0.1-item-service</link>
-            <guid>v0.1-item-service</guid>
-            <pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Today we're excited to announce a new release of the Community Platform!]]></description>
-        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://jwa-lab.github.io/platform-docs/blog/welcome</link>
             <guid>welcome</guid>
-            <pubDate>Sun, 09 May 2021 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 01 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the JWA Platform blog!]]></description>
         </item>
     </channel>
