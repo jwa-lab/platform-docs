@@ -18,8 +18,8 @@ Hook need just a few parameters to be created and subscribed :
 * The Playtix Identifier of the game you want to receive the event for.
 * The URL that the hook will call when an event is generated and caught.
 
-A set can have multiple hooks, but all events will be sent to all hooks.
-It's recommended to have only one hook.
+Hooks are currently registered manually by our team, send us these informations, and we will set them up for you. It is recommended to have only one hook.
+Security enhancements are coming soon with authentication and validation of hooks.
 
 ## List of events that trigger the hook
 
