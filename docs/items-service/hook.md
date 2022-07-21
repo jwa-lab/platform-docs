@@ -10,7 +10,16 @@ The hook service allows the Playtix API to communicate with your application to 
 
 When one or more events relevant to you are triggered, the API checks if a hook exists and sends the events to the registered URL.
 
-An event that is relevant to you is an event that concerns an on chain item related to a schema that you own.
+An event that is relevant to you is an event that concerns an on chain item related to a game that you own.
+
+## Subscribe to Playtix hook
+
+Hook need just a few parameters to be created and subscribed :
+* The Playtix Identifier of the game you want to receive the event for.
+* The URL that the hook will call when an event is generated and caught.
+
+A set can have multiple hooks, but all events will be sent to all hooks.
+It's recommended to have only one hook.
 
 ## List of events that trigger the hook
 
@@ -23,7 +32,6 @@ When an item has changed ownership, we generate an event with the following data
 * new_owner_player_id : The Playtix Identifier of the new player who owns the NFT, if the player is not registered and does not have a Playtix account, the value is null.
 
 ### NFT burned
-
 When an item is burned, we generate an event with the following data :
 * event : Contain "ItemNftBurned", this is the name of the event
 * item_id : The Playtix Identifier of the item
