@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Introduction
 
 The Item service allow you to manage your in-game assets on and off chain.
