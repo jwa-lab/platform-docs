@@ -59,10 +59,17 @@ When an item is burned, we generate an event with the following data :
 ## receiving a hook call
 
 If you subscribe to Playtix hook, events are grouped and sent to the URL by a POST call.
+The events are grouped by interval of five seconds and sent in the body in JSON.
 
-The data is formatted in JSON like this :
+Example of RAW HTTP request :
 
 ```
+POST <YOUR_HOOK_URL> HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+User-Agent: axios/0.26.1
+Host: api.playtix.team
+
 [
     {
         "event": "ItemOwnerChanged",
