@@ -31,12 +31,30 @@ When an item has changed ownership, we generate an event with the following data
 * old_owner_player_id : The Playtix Identifier of the old player who owns the NFT, if the player is not registered and does not have a Playtix account, the value is null.
 * new_owner_player_id : The Playtix Identifier of the new player who owns the NFT, if the player is not registered and does not have a Playtix account, the value is null.
 
+```
+{
+    "event": "ItemOwnerChanged",
+    "item_id": "05c91bc0-6e47-4a2e-a863-b89f743cebb2",
+    "old_owner_player_id": "a96a0762-50f4-4d51-aced-f2655864f46a",
+    "new_owner_player_id": "192cb21f-4c29-4530-b4ba-290156ff38bd"
+}
+```
+
 ### NFT burned
 When an item is burned, we generate an event with the following data :
 * event : Contain "ItemNftBurned", this is the name of the event
 * item_id : The Playtix Identifier of the item
 * owner_id : The Playtix Identifier of the player who owns the NFT, if the player is not registered and does not have a Playtix account, the value is null.
 * schema_id : The Playtix identifier of the burned item schema.
+
+```
+{
+    "event": "ItemNftBurned",
+    "item_id": "b36520eb-6e4d-4f43-881c-75da0ef61ab7",
+    "owner_id": "a96a0762-50f4-4d51-aced-f2655864f46a",
+    "schema_id": "3c44a275-0398-46e5-8466-9860122aa99a"
+}
+```
 
 ## receiving a hook call
 
@@ -51,8 +69,6 @@ The data is formatted in JSON like this :
         "item_id": "05c91bc0-6e47-4a2e-a863-b89f743cebb2",
         "old_owner_player_id": "a96a0762-50f4-4d51-aced-f2655864f46a",
         "new_owner_player_id": "192cb21f-4c29-4530-b4ba-290156ff38bd"
-    }, {
-        ...
     }, {
         "event": "ItemNftBurned",
         "item_id": "b36520eb-6e4d-4f43-881c-75da0ef61ab7",
